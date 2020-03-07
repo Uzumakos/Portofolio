@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./fontawesome-free-5.12.0-web/css/all.css">
+    <link rel="stylesheet" href="style1.css">
+    <title>Home Page</title>
+</head>
+<body>
+    <div class="left-container">
+        <div class="info-container">
+            <h3>Dante</h3>
+            <img class="info-img" src="me2.JPG" alt="">
+            <div class="info">
+                <p class="info-name">Baptiste Amedee Erns</p>
+                <p class="info-profession">Junior Developper</p>
+            </div>
+        </div>
+        <ul class="fa-container">
+            <li><a href="" ><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/amédée-erns-baptiste-11454563"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/Uzumakos"><i class="fab fa-github"></i></a></li>
+       </ul>
+    </div>
+    <div class="right-container">
+        <nav>
+            <ul class="links">
+                <li><a href="index1.html">Home</a></li>
+                <li><a href="">Portofolio</a></li>
+                <li><a href="">Blog Post</a></li>
+                <li><a href="">Learning Ressource</a></li>
+                <li><a href="">Reading list</a></li>
+                <li><a href="">Podcast</a></li>
+                <li><a href="">CV</a></li>
+            </ul>
+            <div class="nav-list">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <div class="nav-info-container">
+                <p>Baptiste Amedee Erns</p>
+                <img class="nav-img" src="me2.JPG" alt="">
+            </div>
+        </nav>
+        <div class="project-container">
+            <div class="sub-container first">
+                <div class="project">
+                    
+                    <img src="java.png" alt="">
+                </div>
+                <div class="project">
+                
+                    <img src="html.png">
+                    <a href="name.html">HTML</a>
+                    <br>
+                    <a href="kobe.html">HTML&CSS</a>
+                </div>
+            </div>
+            <div class="sub-container second">
+                <div class="project">
+                    <img src="CSS.png">
+                    <a href="./CSS/indexprofile.html">CSS</a>
+                </div>
+                <div class="project">
+                    <img src="python.png">
+                    <a href="contact.py">Python</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const navSlide = () =>{
+            let navList = document.querySelector(".nav-list");
+            let links = document.querySelector(".links");
+            let navLinks = document.querySelectorAll(".links li");
+
+
+            navList.addEventListener("click", ()=>{
+                links.classList.toggle("nav-active");
+
+                navLinks.forEach((link,index) =>{
+                    if(link.style.animation){
+                        link.style.animation = '';
+                    }
+                    else{
+                        link.style.animation = `navLinksFade 0.5s ease forwards ${ index/5 }s`;
+                    }
+                });
+
+                navList.classList.toggle("toggle");
+            });
+
+        }
+        navSlide();
+    </script>
+</body>
+</html>
